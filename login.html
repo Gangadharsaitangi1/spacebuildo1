@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="logstyle.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div class="form-box">
+        <h1>Join Here</h1>
+        <div class="input-box">
+            <i class="fa fa-envelope-o"></i>
+            <input type="email" placeholder="Email Id" id="email">
+        </div>
+        <div class="input-box">
+            <i class="fa fa-user"></i>
+            <input type="name" placeholder="User Name">
+        </div>
+        <div class="input-box">
+            <i class="fa fa-phone"></i>
+            <input type="number" placeholder="Phone No">
+        </div>
+        <div class="input-box">
+            <i class="fa fa-key"></i>
+            <input type="password" placeholder="Password" id="myInput">
+            <span class="eye" onclick="myFunction()">
+                <i id="hide1" class="fa fa-eye"></i>
+                <i id="hide2" class="fa fa-eye-slash"></i>
+            </span>
+        </div>
+        <button type="button" class ="login-btn" onclick="login()">ENTER THE GALAXY</button>
+    </div>
+
+    <script>
+        function myFunction(){
+            var x = document.getElementById("myInput")
+            var y = document.getElementById("hide1")
+            var z = document.getElementById("hide2")
+
+            if(x.type === 'password'){
+                x.type = "text";
+                y.style.display = "block";
+                z.style.display = "none"
+            }
+            else{
+                x.type = "password";
+                y.style.display = "none";
+                z.style.display = "block"
+            }
+        }
+    </script>
+    <script>
+        function login(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("myInput").value;
+            if(email== "admin@gmail.com" && password=="admin123"){
+                window.location.assign("index.html");
+                alert("Login Successful !");
+            }
+            else{
+                alert("Invalid Login Credentials");
+                return;
+            }
+        }
+    </script>
+    </body>
+</html>
